@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/homepage.css">
+    <title>Movie Tracker - Homepage</title>
+</head>
+
+<body class="bg-dark">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-altredlight">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="text-light">Movie Tracker</span>
+            </a>
+
+            <!-- toggle button for mobile nav -->
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#intro" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about_us.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact_us.html" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="../../users/template/login.html" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="../../users/template/login.html" class="btn btn-outline-altgray">Log In</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="../../users/template/register.html" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="../../users/template/register.html" class="btn btn-altgray">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- homepage intro -->
+        <div class="bg-image"></div>
+        <section id="intro">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col">
+                        <h1 class="display-2 text-center text-altgray">Movie Tracker</h1>
+                    </div>
+                </div>
+                <div class="d-grid col-md-2 mx-auto" id="join-now">
+                    <a href="../../users/template/register.html" class="btn btn-lg fw-bold">Join Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- popular movies tab -->
+        <section id="popular-movies">
+            <div id="carousel-tab" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel-tab" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel-tab" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel-tab" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="overlay-image d-block w-100"
+                            style="background-image: url(../static/assets/Eternals-bg.jpg);"></div>
+                        <div class="carousel-caption">
+                            <div class="row align-items-center">
+                                <figure class="col-md-6 text-start">
+                                    <blockquote class="blockquote">
+                                        <h2 class="display-5 ">Eternals</h2>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer text-light">
+                                        2021 &middot; Adventure/Action &middot; 2h 37m</cite>
+                                    </figcaption>
+                                    <p class="lead">The saga of the Eternals, a race of immortal beings who lived on
+                                        Earth and shaped its history and civilizations.</p>
+                                </figure>
+                                <div class="col-6 text-end d-none d-md-block">
+                                    <p><strong>IMDb:</strong> 6.9/10 | <strong>Rotten Tomatoes:</strong> 47%</p>
+                                    <p><strong>Director:</strong> Chloé Zhao</p>
+                                    <p><strong>Writers:</strong> Chloé Zhao &middot; Patrick Burleigh &middot; Ryan
+                                        Firpo
+                                    </p>
+                                    <p><strong>Casts:</strong> Gemma Chan &middot; Richard Madden &middot; Angelina
+                                        Jolie
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="overlay-image d-block w-100"
+                            style="background-image: url(../static/assets/Dune-bg.jpg);">
+                        </div>
+                        <div class="carousel-caption">
+                            <div class="row align-items-center">
+                                <figure class="col-md-6 text-start">
+                                    <blockquote class="blockquote">
+                                        <h2 class="display-5">Dune</h2>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer text-light">
+                                        2021 &middot; Sci-fi/Adventure &middot; 2h 35m</cite>
+                                    </figcaption>
+                                    <p class="lead">Feature adaptation of Frank Herbert's science fiction novel, about
+                                        the son of a noble family entrusted with the protection of the most valuable
+                                        asset and most vital element in the galaxy.</p>
+                                </figure>
+                                <div class="col-6 text-end d-none d-md-block">
+                                    <p><strong>IMDb:</strong> 8.2/10 | <strong>Rotten Tomatoes:</strong> 82%</p>
+                                    <p><strong>Director:</strong> Denis Villeneuve</p>
+                                    <p><strong>Writers:</strong> Jon Spaihts &middot; Denis Villeneuve &middot; Eric
+                                        Roth
+                                    </p>
+                                    <p><strong>Casts:</strong> Timothée Chalamet &middot; Rebecca Ferguson &middot;
+                                        Zendaya
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="overlay-image d-block w-100"
+                            style="background-image: url(../static/assets/The-Harder-They-Fall-bg.jpg);"></div>>
+                        <div class="carousel-caption">
+                            <div class="row align-items-center">
+                                <figure class="col-md-6 text-start">
+                                    <blockquote class="blockquote">
+                                        <h2 class="display-5">The Harder They Fall</h2>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer text-light">
+                                        2021 &middot; Western &middot; 2h 19m</cite>
+                                    </figcaption>
+                                    <p class="lead">When an outlaw discovers his enemy is being released from prison, he
+                                        reunites his gang to seek revenge in this Western.</p>
+                                </figure>
+                                <div class="col-6 text-end d-none d-md-block">
+                                    <p><strong>IMDb:</strong> 6.6/10 | <strong>Rotten Tomatoes:</strong> 87%</p>
+                                    <p><strong>Director:</strong> Jeymes Samuel</p>
+                                    <p><strong>Writers:</strong> Jeymes Samuel &middot; Boaz Yakin
+                                    </p>
+                                    <p><strong>Casts:</strong> Jonathan Majors &middot; Zazie Beetz &middot; RJ Cyler
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-tab" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-tab" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-altreddark text-altgray pt-3 pb-2">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mx-auto mt-3">
+                    <h5 class="display-6 mb-2">Movie Tracker</h5>
+                </div>
+                <div class="col-md-4 mx-auto mt-3">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <p><a href="about_us.html" class="text-altpinklight">About Us</a></p>
+                    <p><a href="contact_us.html" class="text-altpinklight">Contact Us</a></p>
+                </div>
+            </div>
+            <hr>
+            <div class="col-md-6 text-altpinklight">
+                <p>Copyright &copy;2021 All rights reserved | This Website Developed by Utkarsh and Christin</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
