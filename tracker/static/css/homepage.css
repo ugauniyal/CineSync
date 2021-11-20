@@ -1,0 +1,64 @@
+.bg-image {
+    position: relative;
+    min-height: 93vh;
+    background-image: url(../assets/collage.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+
+#intro {
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid;
+    box-shadow: 0px 0px 16px 0px rgba(255,255,255,0.8);
+}
+
+#join-now {
+    padding-top: 100px;
+}
+
+#join-now a {
+    color: #5d001e;
+    background-color: #e3e2df;
+    border: 2px solid;
+    border-radius: 20px;
+    transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+#join-now a:hover {
+    color: #e3e2df;
+    background-color: #5d001e;
+    box-shadow: 0px 10px 15px -8px #e3e2df;
+    transform: translateY(-4px);
+}
+
+.carousel-item {
+    height: 46rem;
+    color: white;
+    position: relative;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: top;
+    background-size: cover;
+    opacity: 0.4;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
