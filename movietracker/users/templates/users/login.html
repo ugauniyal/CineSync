@@ -16,15 +16,16 @@
             <div class="row align-items-center justify-content-center vh-100">
                 <div class="col-lg-4 bg-altgray px-5 py-3 rounded-3 shadow-lg">
                     <h1 class="text-altreddark text-center mb-3">Sign In</h1>
-                    <form action="#submit">
+                    <form action="" method="POST">
+                        {% csrf_token %}
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="username" id="username"
+                            <input type="text" class="form-control" name="username" id="username"
                                 placeholder="Username" required>
                             <label for="username">Username</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control" name="password" id="password"
-                                placeholder="Password" minlength="8" required>
+                                placeholder="Password" required>
                             <label for="password">Password</label>
                         </div>
                         <div class="d-grid">
@@ -32,7 +33,7 @@
                                 In</button>
                         </div>
                     </form>
-                    <p class="text-center">Don't have an account? <a href="register.html" class="text-altreddark">Sign
+                    <p class="text-center">Don't have an account? <a href="{% url 'register' %}" class="text-altreddark">Sign
                             Up</a></p>
                 </div>
             </div>

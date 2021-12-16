@@ -32,22 +32,27 @@
                         <a href="#intro" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about_us.html" class="nav-link">About</a>
+                        <a href="{% url 'about' %}" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact_us.html" class="nav-link">Contact</a>
+                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item d-md-none">
-                        <a href="../../users/template/login.html" class="nav-link">Log In</a>
-                    </li>
-                    <li class="nav-item ms-2 d-none d-md-inline">
-                        <a href="../../users/template/login.html" class="btn btn-outline-altgray">Log In</a>
-                    </li>
-                    <li class="nav-item d-md-none">
-                        <a href="../../users/template/register.html" class="nav-link">Sign Up</a>
-                    </li>
-                    <li class="nav-item ms-2 d-none d-md-inline">
-                        <a href="../../users/template/register.html" class="btn btn-altgray">Sign Up</a>
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <li class="nav-item d-md-none">
+                            <a href="{% url 'login' %}" class="nav-link">Log In</a>
+                        </li>
+                        <li class="nav-item ms-2 d-none d-md-inline">
+                            <a href="{% url 'login' %}" class="btn btn-outline-altgray">Log In</a>
+                        </li>
+                        <li class="nav-item d-md-none">
+                            <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
+                        </li>
+                        <li class="nav-item ms-2 d-none d-md-inline">
+                            <a href="{% url 'register' %}" class="btn btn-altgray">Sign Up</a>
+                    {% endif %}
                     </li>
                 </ul>
             </div>
@@ -66,7 +71,7 @@
                     </div>
                 </div>
                 <div class="d-grid col-md-2 mx-auto" id="join-now">
-                    <a href="../../users/template/register.html" class="btn btn-lg fw-bold">Join Now</a>
+                    <a href="{% url 'register' %}" class="btn btn-lg fw-bold">Join Now</a>
                 </div>
             </div>
         </section>
@@ -189,8 +194,8 @@
                 </div>
                 <div class="col-md-4 mx-auto mt-3">
                     <h5 class="mb-4">Quick Links</h5>
-                    <p><a href="about_us.html" class="text-altpinklight">About Us</a></p>
-                    <p><a href="contact_us.html" class="text-altpinklight">Contact Us</a></p>
+                    <p><a href="{% url 'about' %}" class="text-altpinklight">About Us</a></p>
+                    <p><a href="{% url 'contact' %}" class="text-altpinklight">Contact Us</a></p>
                 </div>
             </div>
             <hr>

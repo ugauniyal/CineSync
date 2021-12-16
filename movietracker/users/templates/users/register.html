@@ -9,39 +9,49 @@
     <link rel="stylesheet" href="../static/css/main.css">
     <title>Movie Tracker - Register</title>
 </head>
-
+    
 <body>
+    <!-- Messages for error -->
+
     <main class="bg-altredlight">
         <div class="container">
             <div class="row align-items-center justify-content-center vh-100">
                 <div class="col-lg-6 bg-altgray px-5 py-3 rounded-3 shadow-lg">
+                    {% for message in messages %}
+                        <h3>{{message}}</h3>
+                    {% endfor %}
                     <h1 class="text-altreddark mb-3">Sign Up</h1>
-                    <form action="#submit">
+                    <form method="POST" action="">
+                        {% csrf_token %}
                         <div class="row g-2 mb-3">
                             <div class="col">
-                                <input type="text" class="form-control" name="first-name" placeholder="First name"
-                                    aria-label="First name" maxlength="10" required>
+                                <input type="text" class="form-control" name="first_name" placeholder="First name"
+                                    aria-label="First name" maxlength="20" required>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" name="last-name" placeholder="Last name"
+                                <input type="text" class="form-control" name="last_name" placeholder="Last name"
                                     aria-label="Last name" maxlength="20" required>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" name="username"
-                                placeholder="Username / Email address" aria-label="Username / Email address" required>
+                            <input type="text" class="form-control" name="username"
+                                placeholder="Username" aria-label="Username" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" name="email"
+                                placeholder="Email address" aria-label="Email address" required>
                         </div>
                         <div class="row g-2 mb-3">
                             <div class="col">
-                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                <input type="password" class="form-control" name="password1" placeholder="Password"
                                     aria-label="Password" minlength="8" required>
                             </div>
                             <div class="col">
-                                <input type="password" class="form-control" name="confirm-password"
+                                <input type="password" class="form-control" name="password2"
                                     placeholder="Confirm Password" aria-label="Confirm Password" minlength="8" required>
                             </div>
                         </div>
-                        <p class="fw-bold mb-2">Date of Birth</p>
+                        <!-- <p class="fw-bold mb-2">Date of Birth</p>
                         <div class="row g-1 mb-3">
                             <div class="col">
                                 <select class="form-select" name="date" aria-label="Date" required>
@@ -202,8 +212,8 @@
                                     <option value="1921">1921</option>
                                     <option value="1920">1920</option>
                                 </select>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div> -->
                         <p class="fw-bold mb-2">Gender</p>
                         <div class="row g-0 mb-3">
                             <div class="col">
@@ -233,7 +243,7 @@
                                 aria-label="submit">Sign Up</button>
                         </div>
                     </form>
-                    <p class="text-center">Already have an account? <a href="login.html" class="text-altreddark">Sign
+                    <p class="text-center">Already have an account? <a href="{% url 'login' %}" class="text-altreddark">Sign
                             In</a></p>
                 </div>
             </div>
