@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/css/main.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/homepage.css">
+    <link href="../../static/css/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/homepage.css">
     <title>Movie Tracker - Homepage</title>
 </head>
 
@@ -38,21 +38,21 @@
                         <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                     </li>
                     {% if user.is_authenticated %}
-                        <a class="nav-item nav-link" href="#">{{ user.username }}</a>
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+                    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
-                        <li class="nav-item d-md-none">
-                            <a href="{% url 'login' %}" class="nav-link">Log In</a>
-                        </li>
-                        <li class="nav-item ms-2 d-none d-md-inline">
-                            <a href="{% url 'login' %}" class="btn btn-outline-altgray">Log In</a>
-                        </li>
-                        <li class="nav-item d-md-none">
-                            <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
-                        </li>
-                        <li class="nav-item ms-2 d-none d-md-inline">
-                            <a href="{% url 'register' %}" class="btn btn-altgray">Sign Up</a>
-                    {% endif %}
+                    <li class="nav-item d-md-none">
+                        <a href="{% url 'login' %}" class="nav-link">Log In</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="{% url 'login' %}" class="btn btn-outline-altgray">Log In</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="{% url 'register' %}" class="btn btn-altgray">Sign Up</a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>
@@ -90,7 +90,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="overlay-image d-block w-100"
-                            style="background-image: url(../static/assets/Eternals-bg.jpg);"></div>
+                            style="background-image: url(../../static/assets/Eternals-bg.jpg);"></div>
                         <div class="carousel-caption">
                             <div class="row align-items-center">
                                 <figure class="col-md-6 text-start">
@@ -118,7 +118,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="overlay-image d-block w-100"
-                            style="background-image: url(../static/assets/Dune-bg.jpg);">
+                            style="background-image: url(../../static/assets/Dune-bg.jpg);">
                         </div>
                         <div class="carousel-caption">
                             <div class="row align-items-center">
@@ -148,7 +148,7 @@
                     </div>
                     <div class="carousel-item">
                         <div class="overlay-image d-block w-100"
-                            style="background-image: url(../static/assets/The-Harder-They-Fall-bg.jpg);"></div>>
+                            style="background-image: url(../../static/assets/The-Harder-They-Fall-bg.jpg);"></div>>
                         <div class="carousel-caption">
                             <div class="row align-items-center">
                                 <figure class="col-md-6 text-start">
