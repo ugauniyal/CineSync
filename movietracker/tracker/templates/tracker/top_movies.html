@@ -35,43 +35,28 @@
                     <h2 class="text-center text-light">Rating</h2>
                 </div>
             </div>
+            {% for item in movie %}
             <div class="row bg-altgray align-items-center">
                 <div class="col-1">
-                    <p class="text-center">1.</p>
+                    <p class="text-center">{{ item.id }}</p>
                 </div>
                 <div class="col-2">
-                    <img src="../../static/assets/The Shawshank Redemption.jpg" class="img-fluid mx-auto d-block"
-                        alt="The Shawshank Redemption">
+                    <img src="{{ item.poster.url }}" class="img-fluid mx-auto d-block"
+                        alt="{{ item.title }}">
                 </div>
+                
                 <div class="col-5">
-                    <p>The Shawshank Redemption (1994)</p>
+                    <p>{{ item.title }}</p>
                 </div>
                 <div class="col-2">
-                    <p class="text-center">2h 22m</p>
+                    <p class="text-center">{{ item.runtime }}</p>
                 </div>
                 <div class="col-2">
-                    <p class="text-center">&#9733; 9.2</p>
+                    <p class="text-center">&#9733; {{ item.rating }}</p>
                 </div>
             </div>
-            <div class="row bg-light align-items-center">
-                <div class="col-1">
-                    <p class="text-center">2.</p>
-                </div>
-                <div class="col-2">
-                    <img src="../../static/assets/The Godfather.jpg" class="img-fluid mx-auto d-block"
-                        alt="The Godfather">
-                </div>
-                <div class="col-5">
-                    <p>The Godfather (1972)</p>
-                </div>
-                <div class="col-2">
-                    <p class="text-center">2h 55m</p>
-                </div>
-                <div class="col-2">
-                    <p class="text-center">&#9733; 9.1</p>
-                </div>
-            </div>
-        </div>
+            {% endfor %}
+
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
