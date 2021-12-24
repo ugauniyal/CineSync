@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../static/css/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/main.css">
+    <title>Update Profile</title>
+</head>
+<body>
+    <main class="bg-altpinklight">
+        <div class="content-section">
+            <div class="media">
+            <img class="rounded-circle account-img" style="display: inline;
+            border-radius: 50%;
+            width: 30rem;
+            height: 30rem;
+            padding: 2%;" src="{{user.profile.image.url}}">
+            <div class="media-body">
+                <h3 class="account-heading">Username: {{user.username}}</h3>
+                <br/>
+                <p class="text-secondary">Email: {{user.email}}</p>
+                <br/>
+                <br/>
+            </div>
+            </div>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <fieldset class="form-group">
+                        <legend>Profile Info</legend>
+                        {{ u_form.as_p }}
+                        <br/>
+                        <br/>
+                        {{ p_form.as_p }}
+                        <br/>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

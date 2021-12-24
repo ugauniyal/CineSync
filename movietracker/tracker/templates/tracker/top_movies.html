@@ -29,7 +29,7 @@
             <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#intro" class="nav-link">Home</a>
+                        <a href="{% url 'home' %}" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'about' %}" class="nav-link">About</a>
@@ -63,7 +63,7 @@
         <div class="container-fluid">
             <div class="row py-2">
                 <div class="col text-center">
-                    <h1 class="display-5 text-light fw-bold">Top Movies</h1>
+                    <h1 class="display-5 text-light m-4 fw-bold">Top Movies</h1>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
 
     <main>
         <div class="container-fluid">
-            <div class="row bg-altreddark align-items-center">
+            <div class="row bg-altredlight align-items-center">
                 <div class="col-1">
                     <h2 class="text-center text-light">Rank</h2>
                 </div>
