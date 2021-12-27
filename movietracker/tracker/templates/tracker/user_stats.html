@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../static/css/main.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../static/css/user_stats.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="../../static/js/user_stats.js" defer></script>
     <title>Movie Tracker - User Stats</title>
 </head>
 
@@ -61,7 +63,7 @@
 
     <div class="container-fluid">
         <div class="row min-vh-100 ">
-            <div class="col-3 bg-altredlight">
+            <aside class="col-3 bg-altredlight">
                 <div class="sticky-top">
                     <div class="flex-column">
                         <div class="text-center mt-4 p-3 d-none d-md-block">
@@ -78,8 +80,11 @@
                         </div>
                     </div>
                 </div>
+            </aside>
+            <div class="col-4 bg-altgray">
+                <canvas id="myChart"></canvas>
             </div>
-            <div class="col bg-altpinklight">
+            <div class="col-5 bg-altredlight">
                 <div class="">
                 </div>
             </div>
