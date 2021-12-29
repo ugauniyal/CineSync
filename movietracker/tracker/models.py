@@ -35,6 +35,7 @@ class Movie(models.Model):
     director = models.ForeignKey(Director, on_delete=models.PROTECT, default=1)
     runtime = models.CharField(max_length=64, default="Not Specified")
     poster = models.ImageField(null=True, blank=True, upload_to="images/")
+    cast = models.CharField(max_length=64, default="Not Specified")
 
     def __str__(self):
         return self.title
