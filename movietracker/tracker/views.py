@@ -2,6 +2,7 @@ from tracker.models import Movie
 from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic.detail import DetailView
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -53,7 +54,7 @@ class MovieDetailView(DetailView):
                     return redirect('movies')
 
                 else:
-                    movies = MovieStatus.objects.update(movie=film, user=user, status=status, favourite=favourite, rating=rating)
+                    movies = MovieStatus.objects.filter(user = request.user, movie = film.id).update(movie=film, user=user, status=status, favourite=favourite, rating=rating)
                     return redirect('movies')
 
         
@@ -61,4 +62,14 @@ class MovieDetailView(DetailView):
             return render(request, 'tracker/top_movies.html')
                     
 
+@login_required
+def user_stats(request):
 
+    stats = MovieStatus.objects.filter(user = request.user)
+    watching = MovieStatus.objects.filter(user = request.user, status='Watching').count()
+    plan_to_watch = MovieStatus.objects.filter(user = request.user, status='Plan to Watch').count()
+    completed = MovieStatus.objects.filter(user = request.user, status='Completed').count()
+
+    context = {'stats':stats, 'watching': watching, 'plan_to_watch': plan_to_watch, 'completed': completed}
+
+    return render(request, 'tracker/user_stats.html', context=context)

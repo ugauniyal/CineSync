@@ -35,7 +35,7 @@ class Movie(models.Model):
     director = models.ForeignKey(Director, on_delete=models.PROTECT, default=1)
     runtime = models.CharField(max_length=64, default="Not Specified")
     poster = models.ImageField(null=True, blank=True, upload_to="images/")
-    cast = models.CharField(max_length=64, default="Not Specified")
+    cast = models.CharField(max_length=300, default="Not Specified")
 
     def __str__(self):
         return self.title
@@ -50,6 +50,7 @@ class MovieStatus(models.Model):
     status = models.CharField(max_length=64, choices=(('None', ('None')), ('Watching', ('Watching')), ('Plan to Watch', ('Plan To Watch')), ('Completed', ('Completed'))),blank=True, null=True)
     favourite = models.BooleanField(default=False)
     rating = models.FloatField(default=0.0)
+    date_added = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return str(self.movie)
+        return str(self.movie) + " - " + str(self.user)

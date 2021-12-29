@@ -11,7 +11,7 @@ class Profile(models.Model):
     birth = models.DateField(blank=True)
     image = models.ImageField(default='deafult.jpg', upload_to='profile_pics')
     bio = models.TextField(default='Not Specified')
-    gender = models.CharField(max_length=1, choices=(('m', ('Male')), ('f', ('Female')), ('o', ('Non-Binary'))),blank=True, null=True)
+    gender = models.CharField(max_length=10, choices=(('Male', ('Male')), ('Female', ('Female')), ('Non-Binary', ('Non-Binary'))),blank=True, null=True)
 
     def __str__(self):
         return f"{self.user.username} Profile"

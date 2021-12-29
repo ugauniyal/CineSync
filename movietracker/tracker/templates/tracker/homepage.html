@@ -74,7 +74,11 @@
                     </div>
                 </div>
                 <div class="d-grid col-md-2 mx-auto" id="join-now">
-                    <a href="{% url 'movies' %}" class="btn btn-lg fw-bold">Welcome</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'stats' %}" class="btn btn-lg fw-bold">Welcome</a>
+                    {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-lg fw-bold">Join Now</a>
+                    {% endif %}
                 </div>
             </div>
         </section>
