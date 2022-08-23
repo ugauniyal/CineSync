@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../static/css/main.min.css" rel="stylesheet" />
+    <title>Checkout Page</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-altreddark">
+      <div class="container-xxl">
+        <a class="navbar-brand">
+          <span class="text-light">Movie Tracker</span>
+        </a>
+
+        <!-- toggle button for mobile nav -->
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <li class="nav-item d-md-none">
+              <a href="{% url 'login' %}" class="nav-link">Log In</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a href="{% url 'login' %}" class="btn btn-outline-altgray"
+                >Log In</a
+              >
+            </li>
+            <li class="nav-item d-md-none">
+              <a href="{% url 'register' %}" class="nav-link">Sign Up</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a href="{% url 'register' %}" class="btn btn-altgray">Sign Up</a>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="bg-altredlight">
+      <div class="container">
+        <div class="row align-items-center justify-content-center vh-100">
+          <div class="col-lg-6 bg-altgray px-5 py-3 rounded-3 shadow-lg">
+            <h1 class="text-altreddark mb-3">Booking Summary</h1>
+            <div class="row">
+              <div class="col">
+                <p class="fs-5 fw-bold mb-0">
+                  Spider-Man No Way Home (English) (U/A)
+                </p>
+                <p class="fw-light">English, 2D</p>
+                <p class="mb-0">Cinepolis: Cross River Mall, Shahdara</p>
+                <p>Today, 21 Aug, 7:15 PM</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <p class="fw-bold mb-0">
+                  CLASSIC-G8,G7 <span class="fw-normal">(2 Tickets)</span>
+                </p>
+                <p class="fw-light">&nbsp;&nbsp;&nbsp;&nbsp;SCREEN 2</p>
+              </div>
+              <div class="col text-end">
+                <p class="fw-bold">Rs.400.00</p>
+              </div>
+            </div>
+            <div class="row mb-0">
+              <div class="col">
+                <p class="fw-bold mb-0">Convenience fees</p>
+                <p class="mb-0">
+                  <small class="fw-light">Base Amount</small>
+                </p>
+                <p class="mb-0">
+                  <small class="fw-light">Integrated GST (IGST) @ 18%</small>
+                </p>
+              </div>
+              <div class="col text-end">
+                <p class="fw-bold mb-0">Rs.68.44</p>
+                <p class="mb-0">
+                  <small class="fw-light">Rs.58.00</small>
+                </p>
+                <p class="mb-0">
+                  <small class="fw-light">Rs.10.44</small>
+                </p>
+              </div>
+            </div>
+            <hr />
+            <div class="row mb-4">
+              <div class="col">
+                <p class="fs-5 fw-bold mb-0">Sub Total</p>
+              </div>
+              <div class="col text-end">
+                <p class="fs-5 fw-bold mb-0">Rs.468.44</p>
+              </div>
+            </div>
+            <p class="text-center">
+              &#9432; By proceeding, I express my consent to complete this
+              transaction.
+            </p>
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-altreddark btn-lg fw-bold mb-1"
+                aria-label="submit"
+              >
+                <div class="row">
+                  <div class="col text-start">
+                    <p class="fw-bold mb-0">Amount Payable</p>
+                  </div>
+                  <div class="col text-end">
+                    <p class="fw-bold mb-0">Rs.468.44</p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
