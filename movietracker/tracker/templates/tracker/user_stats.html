@@ -40,7 +40,7 @@
                         <a href="{% url 'contact' %}" class="nav-link">Contact</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+                    <a class="nav-item nav-link" href="{% url 'stats' %}">{{ user.username }}</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
                     <li class="nav-item d-md-none">
@@ -76,6 +76,8 @@
                             <p><strong>Bio:</strong> {{ user.profile.bio }}</p>
                             <p><strong>DOB:</strong> {{ user.profile.birth }}</p>
                             <p><strong>Gender:</strong> {{ user.profile.gender }}</p>
+                            <button type="button" class="btn btn-altreddark"
+                                aria-label="profile"><a style="text-decoration: none; color: #ffff;" href="{% url 'profile' %}">Profile</a></button>
                         </div>
                     </div>
                 </div>
@@ -112,11 +114,13 @@
                 {% for stat in stats %}
                 <div class="row bg-altgray align-items-center mx-1">
                     <div class="col-1">
-                        <img src="{{stat.movie.poster.url}}" class="img-fluid mx-auto d-block"
-                            alt="Spider-Man No Way Home Poster">
+                        <img src="{{stat.movie.poster.url}}" class="img-fluid mx-auto d-block">
                     </div>
                     <div class="col-3">
-                        <p>{{stat.movie.title}} &#11088;</p>
+                        <p>{{stat.movie.title}}</p>
+                            {% if stat.favourite %}
+                                &#11088;
+                            {% endif %}
                     </div>
 
                     <div class="col-2 text-center">
@@ -195,18 +199,18 @@
         Chart.defaults.font.family = 'Lato';
         Chart.defaults.font.size = 18;
 
-        const comedy = "{{ comedy|safe }}";
-        const sci_fi = "{{ sci_fi|safe }}";
-        const horror = "{{ horror|safe }}";
-        const romance = "{{ romance|safe }}";
-        const action = "{{ action|safe }}";
-        const thriller = "{{ thriller|safe }}";
-        const drama = "{{ drama|safe }}";
-        const mystery = "{{ mystery|safe }}";
-        const crime = "{{ crime|safe }}";
-        const animation = "{{ animation|safe }}";
-        const adventure = "{{ adventure|safe }}";
-        const fantasy = "{{ fantasy|safe }}";
+        const comedy = "{{ Comedy|safe }}";
+        const sci_fi = "{{ Sci_fi|safe }}";
+        const horror = "{{ Horror|safe }}";
+        const romance = "{{ Romance|safe }}";
+        const action = "{{ Action|safe }}";
+        const thriller = "{{ Thriller|safe }}";
+        const drama = "{{ Drama|safe }}";
+        const mystery = "{{ Mystery|safe }}";
+        const crime = "{{ Crime|safe }}";
+        const animation = "{{ Animation|safe }}";
+        const adventure = "{{ Adventure|safe }}";
+        const fantasy = "{{ Fantasy|safe }}";
         const superhero = "{{ superhero|safe }}";
 
         let genreStatsChart = new Chart(myChart2, {

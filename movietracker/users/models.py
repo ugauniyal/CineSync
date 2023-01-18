@@ -8,7 +8,7 @@ from PIL import Image
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    birth = models.DateField(blank=True)
+    birth = models.DateField(blank=True, null=True)
     image = models.ImageField(default='deafult.jpg', upload_to='profile_pics')
     bio = models.TextField(default='Not Specified')
     gender = models.CharField(max_length=10, choices=(('Male', ('Male')), ('Female', ('Female')), ('Non-Binary', ('Non-Binary'))),blank=True, null=True)
@@ -16,7 +16,7 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username} Profile"
 
-    def save(self):
+    def save(self, *args, **kwargs):
         super().save()
 
         img = Image.open(self.image.path)

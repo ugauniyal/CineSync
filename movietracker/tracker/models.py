@@ -50,6 +50,7 @@ class MovieStatus(models.Model):
     status = models.CharField(max_length=64, choices=(('None', ('None')), ('Watching', ('Watching')), ('Plan to Watch', ('Plan To Watch')), ('Completed', ('Completed'))),blank=True, null=True)
     favourite = models.BooleanField(default=False)
     rating = models.FloatField(default=0.0)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, default=1)
     date_added = models.DateTimeField(default=timezone.now)
 
     def __str__(self):

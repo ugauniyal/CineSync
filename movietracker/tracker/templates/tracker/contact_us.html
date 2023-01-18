@@ -38,7 +38,7 @@
                         <a href="{% url 'movies' %}" class="nav-link">Movies</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+                    <a class="nav-item nav-link" href="{% url 'stats' %}">{{ user.username }}</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
                     <li class="nav-item d-md-none">
@@ -75,7 +75,8 @@
         <div class="container" id="form">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-8 bg-altgray px-5 py-3 rounded-3 shadow-lg">
-                    <form action="#submit">
+                    <form action="" method="post" class="contact-form">
+                        {% csrf_token %}
                         <div class="row mb-1">
                             <label for="name" class="col-sm-2 col-form-label fw-bold">Name</label>
                             <div class="col-sm-12">

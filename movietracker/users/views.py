@@ -17,7 +17,6 @@ def register(request):
         email = request.POST['email']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-        gender = request.POST['gender']
 
         # Check if password typed is same in both password fields
         if password1 == password2:
@@ -31,9 +30,9 @@ def register(request):
                 return redirect('register')
             # Create user
             else:
-                user = User.objects.create_user(username=username, email=email, password=password1, first_name=first_name, last_name=last_name)
-                profile = Profile.objects.create(user=username, gender=gender)
+                user = User.objects.create_user(username=username, email=email, password=password1, first_name=first_name, last_name=last_name)           
                 user.save()
+                profile = Profile.objects.create(user=user.username)
                 profile.save()
                 return redirect('login')
         else:
