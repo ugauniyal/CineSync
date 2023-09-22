@@ -1,4 +1,4 @@
-![image](https://github.com/ugauniyal/Movie-Tracker/assets/34196458/0b205651-3618-428f-a13a-c381e2679bfd)![image](https://github.com/ugauniyal/Movie-Tracker/assets/34196458/6f0c17f9-3ac0-4cc0-9162-e6cf11e5af81)# Movie-Tracker
+Movie-Tracker
 A Movie Tracker website made using Django and Bootstrap with CRUD functionality. The user can register and then track their movie progress or can mark and share their favourite movies with their friends.
 
 ## 🚀 Features
