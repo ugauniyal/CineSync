@@ -1,4 +1,3 @@
-Movie-Tracker
 A Movie Tracker website made using Django and Bootstrap with CRUD functionality. The user can register and then track their movie progress or can mark and share their favourite movies with their friends.
 
 ## 🚀 Features
