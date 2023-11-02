@@ -76,8 +76,9 @@
                             <p><strong>Bio:</strong> {{ user.profile.bio }}</p>
                             <p><strong>DOB:</strong> {{ user.profile.birth }}</p>
                             <p><strong>Gender:</strong> {{ user.profile.gender }}</p>
-                            <button type="button" class="btn btn-altreddark"
-                                aria-label="profile"><a style="text-decoration: none; color: #ffff;" href="{% url 'profile' %}">Profile</a></button>
+                            <button type="button" class="btn btn-altreddark" aria-label="profile"><a
+                                    style="text-decoration: none; color: #ffff;"
+                                    href="{% url 'profile' %}">Profile</a></button>
                         </div>
                     </div>
                 </div>
@@ -118,9 +119,9 @@
                     </div>
                     <div class="col-3">
                         <p>{{stat.movie.title}}</p>
-                            {% if stat.favourite %}
-                                &#11088;
-                            {% endif %}
+                        {% if stat.favourite %}
+                        &#11088;
+                        {% endif %}
                     </div>
 
                     <div class="col-2 text-center">
