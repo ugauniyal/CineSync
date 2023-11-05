@@ -88,10 +88,10 @@ class MovieDetailView(DetailView):
                     movies = MovieStatus.objects.filter(user = request.user, movie = film.id).update(movie=film, user=user, status=status, favourite=favourite, rating=rating)
                     return redirect('movies')
 
-        
+
         else:
             return render(request, 'tracker/top_movies.html')
-                    
+
 
 @login_required
 def user_stats(request):
@@ -106,3 +106,7 @@ def user_stats(request):
     context = {'stats':stats, 'watching': watching, 'plan_to_watch': plan_to_watch, 'completed': completed, 'superhero': superhero}
 
     return render(request, 'tracker/user_stats.html', context=context)
+
+
+def checkout(request):
+    return render(request, 'tracker/checkout_page.html')

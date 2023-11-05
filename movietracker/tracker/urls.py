@@ -11,4 +11,5 @@ urlpatterns = [
     path("movies/", views.movies, name="movies"),
     path("stats/", views.user_stats, name="stats"),
     path('movies/<int:pk>/', MovieDetailView.as_view(), name='movie-detail'),
+    path("checkout/", views.checkout, name="checkout"),
 ]
