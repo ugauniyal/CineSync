@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../static/css/user_stats.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <!-- <script src="../../static/js/user_stats.js" defer></script> -->
-    <title>Movie Tracker - User Stats</title>
+    <title>CineSync - User Stats</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-altreddark">
         <div class="container-xxl">
             <a class="navbar-brand">
-                <span class="text-light">Movie Tracker</span>
+                <span class="text-light">CineSync</span>
             </a>
 
             <!-- toggle button for mobile nav -->
@@ -38,6 +38,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'movies' %}" class="nav-link">Movies</a>
                     </li>
                     {% if user.is_authenticated %}
                     <a class="nav-item nav-link" href="{% url 'stats' %}">{{ user.username }}</a>

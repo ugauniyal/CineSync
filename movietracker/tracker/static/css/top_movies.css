@@ -1,7 +1,20 @@
-p {
-    font-size: 20px;
+.card img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
-img {
-    width: 80px;
+.plan-to-watch {
+    background-color: #ff6384;
+    color: white;
+}
+
+.watching {
+    background-color: #ffcd56;
+    color: white;
+}
+
+.completed {
+    background-color: #3399cc;
+    color: white;
 }
