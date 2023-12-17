@@ -1,4 +1,8 @@
-A Movie Tracker website made using Django and Bootstrap with CRUD functionality. The user can register and then track their movie progress or can mark and share their favourite movies with their friends.
+Engineered a sophisticated movie management and ticketing platform using Django and Bootstrap.
+CineSync delivers a seamless user experience, boasting robust CRUD functionality for efficient movie data man-
+agement. Implemented an integrated ticket purchasing feature within the platform, augmenting user convenience.
+Leveraged Razorpay as the secure payment gateway to facilitate swift and reliable transactions. Upon successful
+payment, users receive an instantaneous order payment receipt.
 
 ## 🚀 Features
 - User authentication and authorization using Django's inbuilt Authentication System.
